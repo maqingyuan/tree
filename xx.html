@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		 #d1,#d1+div{
+		 	width: 700px;
+		 	height: 100px;
+		 	margin:auto;
+
+		 }
+		 #d1 div{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+			float: left;
+			font-size: 60px;
+			text-align: center;
+			margin-left: 10px;
+
+			
+		}
+		/*#d2,.d2{
+			color: red;
+		}*/
+	</style>
+</head>
+<body>
+	<div id="d1">
+	
+		<div id="hour"></div> 
+		  <div class="d2" >: </div> 		  		
+		 
+		<div id="minute"></div>
+		 <div id="d2">: </div> 
+		 
+		<div id="second"></div>
+	</div>
+	<div >
+	  <input type="button" name="" value="开始">
+	  <input type="button" name="" value="停止">
+  	</div>
+  
+</body>
+<script type="text/javascript">
+
+	    function loadTime(){
+	    	var date=new Date();
+	    	var hour=date.getHours();
+	    	var minute=date.getMinutes();
+	    	var second=date.getSeconds();
+
+	    	var hourDiv=document.getElementById("hour");
+	    	var minuteDiv=document.getElementById("minute");
+	    	var secondDiv=document.getElementById("second");
+ 					
+ 				hourDiv.innerHTML=hour;
+ 				minuteDiv.innerHTML=minute;
+ 				secondDiv.innerHTML=second;
+
+	    }
+	        loadTime();
+
+	        var timer = setInterval(loadTime,1000);
+
+            var d2=document.getElementsByClassName("d2")[0];
+            var d3=document.getElementById("d2");
+          
+        setInterval(function(){
+
+				    setTimeout(function(){
+				    	
+				    	d2.style.color="black";
+				    	d3.style.color="black";
+				    	// d2.style.display="none";
+				    	// d3.style.display="none";
+				    	// console.log(d2.style.color);
+				    },1500);
+
+				     setTimeout(function(){
+				    	// d2.style.display="inline-block";
+				    	// d3.style.display="inline-block";
+				    	d2.style.color="green";
+				    	d3.style.color="green";
+				    	// console.log(d2.style.color);
+				    },1000)
+
+	     },1000)  
+
+
+
+</script>
+</html>
